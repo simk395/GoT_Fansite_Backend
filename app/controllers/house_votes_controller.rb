@@ -1,0 +1,2 @@
+class HouseVotesController < ApplicationController
+end

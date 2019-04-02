@@ -1,0 +1,2 @@
+class HouseVote < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class CharVote < ApplicationRecord
+end
