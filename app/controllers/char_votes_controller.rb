@@ -1,2 +1,0 @@
-class CharVotesController < ApplicationController
-end

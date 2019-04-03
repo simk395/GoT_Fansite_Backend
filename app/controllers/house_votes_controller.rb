@@ -1,2 +1,0 @@
-class HouseVotesController < ApplicationController
-end
