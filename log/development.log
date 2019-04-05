@@ -11139,3 +11139,1378 @@ No serializer found for resource: #<Category id: 1, title: "General Discussion",
 Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveCategoryIdFromPosts (20190405142617)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "posts" DROP COLUMN "category_id"[0m
+  ↳ db/migrate/20190405142617_remove_category_id_from_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190405142617"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCategoryNameToPosts (20190405142657)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "posts" ADD "category_name" character varying[0m
+  ↳ db/migrate/20190405142657_add_category_name_to_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190405142657"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (189.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gotf_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (167.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gotf_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (435.4ms)[0m  [1m[35mCREATE DATABASE "gotf_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (436.3ms)[0m  [1m[35mCREATE DATABASE "gotf_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190402173529)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "profile_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173529_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173529"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateProfiles (20190402173539)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "display_name" character varying, "display_pic" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173539_create_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173539"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20190402173549)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "message" character varying, "pinned" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173549_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173549"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20190402173600)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "post_id" integer, "profile_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173600_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173600"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20190403133326)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190403133326_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403133326"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCategoryIdToPost (20190403151035)
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "posts" ADD "category_id" integer[0m
+  ↳ db/migrate/20190403151035_add_category_id_to_post.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403151035"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to RemoveProfileIdFromUsers (20190403165231)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "profile_id"[0m
+  ↳ db/migrate/20190403165231_remove_profile_id_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165231"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToProfiles (20190403165415)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "profiles" ADD "user_id" integer[0m
+  ↳ db/migrate/20190403165415_add_user_id_to_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165415"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddMessagesToComments (20190403165509)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "comments" ADD "message" character varying[0m
+  ↳ db/migrate/20190403165509_add_messages_to_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165509"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-05 14:32:06.112809"], ["updated_at", "2019-04-05 14:32:06.112809"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (1.9ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "General Discussion"], ["created_at", "2019-04-05 14:32:06.289194"], ["updated_at", "2019-04-05 14:32:06.289194"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Stark"], ["created_at", "2019-04-05 14:32:06.296235"], ["updated_at", "2019-04-05 14:32:06.296235"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Baratheon"], ["created_at", "2019-04-05 14:32:06.303025"], ["updated_at", "2019-04-05 14:32:06.303025"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Targaryen"], ["created_at", "2019-04-05 14:32:06.308154"], ["updated_at", "2019-04-05 14:32:06.308154"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lannister"], ["created_at", "2019-04-05 14:32:06.313381"], ["updated_at", "2019-04-05 14:32:06.313381"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Other Houses"], ["created_at", "2019-04-05 14:32:06.319395"], ["updated_at", "2019-04-05 14:32:06.319395"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Off-Topic Discussion"], ["created_at", "2019-04-05 14:32:06.324288"], ["updated_at", "2019-04-05 14:32:06.324288"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "1?@!#"], ["created_at", "2019-04-05 14:32:06.362394"], ["updated_at", "2019-04-05 14:32:06.362394"], ["category_id", 5]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "2!@#\#@"], ["created_at", "2019-04-05 14:32:06.369934"], ["updated_at", "2019-04-05 14:32:06.369934"], ["category_id", 5]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPost Create (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "3!#%!#"], ["created_at", "2019-04-05 14:32:06.376272"], ["updated_at", "2019-04-05 14:32:06.376272"], ["category_id", 5]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "4!#%!#%"], ["created_at", "2019-04-05 14:32:06.382401"], ["updated_at", "2019-04-05 14:32:06.382401"], ["category_id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "5!@#"], ["created_at", "2019-04-05 14:32:06.390376"], ["updated_at", "2019-04-05 14:32:06.390376"], ["category_id", 2]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is i?"], ["created_at", "2019-04-05 14:32:06.396121"], ["updated_at", "2019-04-05 14:32:06.396121"], ["category_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is  true?"], ["created_at", "2019-04-05 14:32:06.402554"], ["updated_at", "2019-04-05 14:32:06.402554"], ["category_id", 3]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is it true?"], ["created_at", "2019-04-05 14:32:06.408670"], ["updated_at", "2019-04-05 14:32:06.408670"], ["category_id", 4]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+Started GET "//categories" for ::1 at 2019-04-05 10:33:01 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:33:01 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.7ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.87ms)
+Completed 200 OK in 101ms (Views: 40.0ms | ActiveRecord: 48.3ms)
+
+
+Completed 200 OK in 102ms (Views: 79.3ms | ActiveRecord: 13.2ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:33:53 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:33:53 -0400
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.32ms)
+Processing by PostsController#index as */*
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (5.01ms)
+Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:34:06 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:34:06 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.74ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mPost Load (8.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.57ms)
+Completed 200 OK in 77ms (Views: 68.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:37:01 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:37:01 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.73ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.51ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:38:37 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:38:37 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.63ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 2.7ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.23ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:38:48 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.49ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:38:48 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.46ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:39:04 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:39:04 -0400
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/posts_controller.rb:3
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.58ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 2.2ms)
+
+
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:39:12 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:39:12 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.4ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 1.2ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (23.63ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:39:29 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:39:29 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.17ms)
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 2.7ms)
+
+
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.08ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:40:02 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.78ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:40:02 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.66ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:40:36 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+Started GET "//posts" for ::1 at 2019-04-05 10:40:36 -0400
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.11ms)
+Processing by PostsController#index as */*
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.65ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:41:02 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.09ms)
+Started GET "//posts" for ::1 at 2019-04-05 10:41:02 -0400
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 1.1ms)
+
+
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.24ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:41:17 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:41:17 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/category_controller.rb:3
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.9ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.43ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 3.4ms)
+
+
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:42:24 -0400
+Started GET "//categories" for ::1 at 2019-04-05 10:42:24 -0400
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.1ms)
+  ↳ app/controllers/category_controller.rb:3
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.7ms)
+
+
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.91ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:43:17 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:43:17 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.51ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.7ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.54ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:43:36 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.64ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:43:36 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.16ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:43:55 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:43:55 -0400
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Processing by PostsController#index as */*
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.48ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.93ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:44:16 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.99ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:44:16 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.6ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:44:42 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:44:42 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (3.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.18ms)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 3.5ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.31ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:44:49 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.73ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:44:49 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.68ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:44:55 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:44:55 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.98ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 3.1ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.85ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:45:25 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.49ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:45:25 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.88ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:46:10 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.95ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:46:10 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.77ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:46:20 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:46:20 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (3.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.86ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 3.2ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.93ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:47:43 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:47:43 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.36ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.4ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.16ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:47:58 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:47:58 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.97ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.17ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:48:05 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:48:05 -0400
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+Processing by PostsController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.49ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:48:08 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (5.24ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:48:32 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:48:32 -0400
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Processing by PostsController#index as */*
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.27ms)
+  [1m[36mPost Load (4.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.9ms)
+
+
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.73ms)
+Completed 200 OK in 13ms (Views: 7.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:48:41 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:48:41 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (3.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.42ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 3.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.06ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:49:01 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (6.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.15ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:49:01 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (6.5ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-04-05 10:49:14 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (8.0ms)
+Completed 200 OK in 36ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-04-05 10:49:18 -0400
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.61ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:49:32 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:49:32 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (5.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.44ms)
+Completed 200 OK in 11ms (Views: 4.8ms | ActiveRecord: 5.9ms)
+
+
+  [1m[36mPost Load (7.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.71ms)
+Completed 200 OK in 18ms (Views: 10.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:50:03 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:50:03 -0400
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+Processing by PostsController#index as */*
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.05ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.39ms)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:50:24 -0400
+Processing by PostsController#index as */*
+Started GET "//categories" for ::1 at 2019-04-05 10:50:24 -0400
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+Processing by CategoryController#index as */*
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.85ms)
+  [1m[36mCategory Load (4.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.7ms)
+
+
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.77ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:51:03 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.7ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:51:03 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.0ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:51:16 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:51:16 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.33ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.6ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.42ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:51:21 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:51:21 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.33ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.1ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.45ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:52:20 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:52:20 -0400
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Processing by PostsController#index as */*
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.1ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.6ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.16ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:53:32 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:53:32 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.22ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.8ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:53:43 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:53:43 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/category_controller.rb:3
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.81ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.7ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.11ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:54:20 -0400
+Processing by CategoryController#index as */*
+Started GET "//posts" for ::1 at 2019-04-05 10:54:20 -0400
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+Processing by PostsController#index as */*
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.28ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mPost Load (5.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.42ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:54:39 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:54:39 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.82ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.7ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.91ms)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:55:19 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "//categories" for ::1 at 2019-04-05 10:55:19 -0400
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Processing by CategoryController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.98ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (3.08ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:55:54 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:55:54 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  ↳ app/controllers/posts_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.0ms)
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.6ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (4.26ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 10:56:04 -0400
+Started GET "//posts" for ::1 at 2019-04-05 10:56:04 -0400
+Processing by CategoryController#index as */*
+Processing by PostsController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.95ms)
+  ↳ app/controllers/posts_controller.rb:3
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.6ms)
+
+
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.59ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:56:08 -0400
+Started GET "//categories" for ::1 at 2019-04-05 10:56:08 -0400
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.75ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mCategory Load (6.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.48ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 10:59:28 -0400
+Started GET "//categories" for ::1 at 2019-04-05 10:59:28 -0400
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/posts_controller.rb:3
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (2.84ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.79ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.6ms)
+
+
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 11:00:49 -0400
+Started GET "//categories" for ::1 at 2019-04-05 11:00:49 -0400
+Processing by PostsController#index as */*
+Processing by CategoryController#index as */*
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/posts_controller.rb:3
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.72ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (2.38ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 2.3ms)
+
+
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "//categories" for ::1 at 2019-04-05 11:02:08 -0400
+Processing by CategoryController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/category_controller.rb:3
+No serializer found for resource: #<Category id: 1, title: "General Discussion", created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Category::ActiveRecord_Relation (1.92ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//posts" for ::1 at 2019-04-05 11:02:08 -0400
+Processing by PostsController#index as */*
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:3
+No serializer found for resource: #<Post id: 1, title: "Lannister alaways pays their debt", message: "1?@!#", pinned: false, created_at: "2019-04-05 14:32:06", updated_at: "2019-04-05 14:32:06", category_id: 5>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Post::ActiveRecord_Relation (3.19ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (183.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gotf_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (173.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gotf_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (430.6ms)[0m  [1m[35mCREATE DATABASE "gotf_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (406.3ms)[0m  [1m[35mCREATE DATABASE "gotf_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190402173529)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "profile_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173529_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173529"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateProfiles (20190402173539)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "display_name" character varying, "display_pic" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173539_create_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173539"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20190402173549)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "message" character varying, "pinned" boolean DEFAULT FALSE, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173549_create_posts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173549"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20190402173600)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "post_id" integer, "profile_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190402173600_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190402173600"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20190403133326)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190403133326_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403133326"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCategoryIdToPost (20190403151035)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "posts" ADD "category_id" integer[0m
+  ↳ db/migrate/20190403151035_add_category_id_to_post.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403151035"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to RemoveProfileIdFromUsers (20190403165231)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "profile_id"[0m
+  ↳ db/migrate/20190403165231_remove_profile_id_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165231"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToProfiles (20190403165415)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "profiles" ADD "user_id" integer[0m
+  ↳ db/migrate/20190403165415_add_user_id_to_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165415"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddMessagesToComments (20190403165509)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "message" character varying[0m
+  ↳ db/migrate/20190403165509_add_messages_to_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190403165509"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-05 15:05:32.238338"], ["updated_at", "2019-04-05 15:05:32.238338"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4646473871855425155)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "General Discussion"], ["created_at", "2019-04-05 15:05:32.351866"], ["updated_at", "2019-04-05 15:05:32.351866"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Stark"], ["created_at", "2019-04-05 15:05:32.363254"], ["updated_at", "2019-04-05 15:05:32.363254"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Baratheon"], ["created_at", "2019-04-05 15:05:32.367543"], ["updated_at", "2019-04-05 15:05:32.367543"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Targaryen"], ["created_at", "2019-04-05 15:05:32.371571"], ["updated_at", "2019-04-05 15:05:32.371571"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lannister"], ["created_at", "2019-04-05 15:05:32.376035"], ["updated_at", "2019-04-05 15:05:32.376035"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Other Houses"], ["created_at", "2019-04-05 15:05:32.383112"], ["updated_at", "2019-04-05 15:05:32.383112"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Off-Topic Discussion"], ["created_at", "2019-04-05 15:05:32.387861"], ["updated_at", "2019-04-05 15:05:32.387861"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "1?@!#"], ["created_at", "2019-04-05 15:05:32.407512"], ["updated_at", "2019-04-05 15:05:32.407512"], ["category_id", 5]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "2!@#\#@"], ["created_at", "2019-04-05 15:05:32.412291"], ["updated_at", "2019-04-05 15:05:32.412291"], ["category_id", 5]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "3!#%!#"], ["created_at", "2019-04-05 15:05:32.415999"], ["updated_at", "2019-04-05 15:05:32.415999"], ["category_id", 5]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "4!#%!#%"], ["created_at", "2019-04-05 15:05:32.419789"], ["updated_at", "2019-04-05 15:05:32.419789"], ["category_id", 2]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "5!@#"], ["created_at", "2019-04-05 15:05:32.423328"], ["updated_at", "2019-04-05 15:05:32.423328"], ["category_id", 2]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is i?"], ["created_at", "2019-04-05 15:05:32.427293"], ["updated_at", "2019-04-05 15:05:32.427293"], ["category_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is  true?"], ["created_at", "2019-04-05 15:05:32.431172"], ["updated_at", "2019-04-05 15:05:32.431172"], ["category_id", 3]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "message", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Lannister alaways pays their debt"], ["message", "is it true?"], ["created_at", "2019-04-05 15:05:32.434836"], ["updated_at", "2019-04-05 15:05:32.434836"], ["category_id", 4]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "profile_id", "created_at", "updated_at", "message") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 1], ["profile_id", 1], ["created_at", "2019-04-05 15:05:32.453834"], ["updated_at", "2019-04-05 15:05:32.453834"], ["message", "wheres my gold?"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "profile_id", "created_at", "updated_at", "message") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 1], ["profile_id", 1], ["created_at", "2019-04-05 15:05:32.458146"], ["updated_at", "2019-04-05 15:05:32.458146"], ["message", "wheres my gold?2"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "profile_id", "created_at", "updated_at", "message") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 1], ["profile_id", 1], ["created_at", "2019-04-05 15:05:32.461529"], ["updated_at", "2019-04-05 15:05:32.461529"], ["message", "wheres my gold?3"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "profile_id", "created_at", "updated_at", "message") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 1], ["profile_id", 1], ["created_at", "2019-04-05 15:05:32.465402"], ["updated_at", "2019-04-05 15:05:32.465402"], ["message", "wheres my gold?4"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27

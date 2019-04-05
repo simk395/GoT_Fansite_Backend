@@ -21,3 +21,7 @@ Post.create(title: "Lannister alaways pays their debt", message:"5!@#", category
 Post.create(title: "Lannister alaways pays their debt", message:"is i?", category_id:"1")
 Post.create(title: "Lannister alaways pays their debt", message:"is  true?", category_id:"3")
 Post.create(title: "Lannister alaways pays their debt", message:"is it true?", category_id:"4")
+Comment.create(post_id: 1, profile_id: 1, message: "wheres my gold?")
+Comment.create(post_id: 1, profile_id: 1, message: "wheres my gold?2")
+Comment.create(post_id: 1, profile_id: 1, message: "wheres my gold?3")
+Comment.create(post_id: 1, profile_id: 1, message: "wheres my gold?4")
