@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_165509) do
+ActiveRecord::Schema.define(version: 2019_04_08_231315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,10 +23,15 @@ ActiveRecord::Schema.define(version: 2019_04_03_165509) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "post_id"
-    t.integer "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "message"
+    t.integer "user_id"
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -46,11 +51,20 @@ ActiveRecord::Schema.define(version: 2019_04_03_165509) do
     t.integer "user_id"
   end
 
+  create_table "user_likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bio"
+    t.string "avatar"
   end
 
 end
