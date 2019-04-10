@@ -1,4 +1,4 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
     skip_before_action :authorized, only: [:index, :destroy]
     def index
         render json: Comment.all

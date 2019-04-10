@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create, :index]
+  skip_before_action :authorized, only: [:create, :index, :destroy]
   
   def index
     render json: User.all
@@ -13,6 +13,15 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: { error: 'failed to create user' }, status: :not_acceptable
     end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)    
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
   end
 
   private
