@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:index]
   resources :posts, only: [:index, :create, :update]
-  resources :comments, only: [:index, :create, :destroy]
+  resources :comments, only: [:index, :create, :update, :destroy]
   
 end

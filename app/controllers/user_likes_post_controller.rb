@@ -1,0 +1,2 @@
+class UserLikesPostController < ApplicationController
+end

@@ -8,6 +8,11 @@ class CommentsController < ApplicationController
         @comment = Comment.create(comment_params)
     end
 
+    def update
+        @comment = Comment.find(params[:id])
+        @comment.update(comment_params)
+    end
+
     def destroy
         Comment.find(params[:id]).destroy
     end
