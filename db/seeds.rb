@@ -12,5 +12,5 @@ Category.create(title: "Targaryen")
 Category.create(title: "Lannister")
 Category.create(title: "Other Houses")
 Category.create(title: "Off-Topic Discussion")
-Post.create!(title: "Lannister alaways pays their debt", message:"1?@!#", category_id:"5")
+
 
