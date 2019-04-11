@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :create, :update]
   resources :comments, only: [:index, :create, :update, :destroy]
   resources :user_likes_posts, only: [:index, :create]
-  resources :user_likes_comments , only: [:index, :create]
+  resources :user_likes_comments , only: [:index, :create, :destroy]
   
 end
