@@ -1,7 +1,7 @@
 class UserLikesCommentsController < ApplicationController
     skip_before_action :authorized, only: [:index]
     def index
-        @likes = UserLikesComment.all
+        @likes = UserLikesComment.all 
         render json: @likes
     end
 
@@ -12,7 +12,7 @@ class UserLikesCommentsController < ApplicationController
     def destroy
         UserLikesComment.find(params[:id]).destroy
     end
-    
+
     private
 
     def likes_params
