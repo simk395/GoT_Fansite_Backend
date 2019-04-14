@@ -6,11 +6,15 @@ class UserLikesCommentsController < ApplicationController
     end
 
     def create
+        @likes = UserLikesComment.all 
         UserLikesComment.find_or_create_by(likes_params)
+        render json: @likes
     end
 
     def destroy
+        @likes = UserLikesComment.all 
         UserLikesComment.find(params[:id]).destroy
+        render json: @likes
     end
 
     private
