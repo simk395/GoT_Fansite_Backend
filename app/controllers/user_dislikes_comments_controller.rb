@@ -1,25 +1,20 @@
-class UserDisDislikesCommentsController < ApplicationController
+class UserDislikesCommentsController < ApplicationController
     skip_before_action :authorized, only: [:index]
     def index
         @dislikes = UserDislikesComment.all 
-        render json: @Dislikes
-    end
-
-    def create
-        @dislikes = UserDislikesComment.all 
-        UserDislikesComment.find_or_create_by(dislikes_params)
         render json: @dislikes
     end
 
-    def destroy
+    def create
+        UserDislikesComment.find_or_create_by(dislikes_params)
+        UserLikesComment.find_or_initialize_by(dislikes_params).destroy
         @dislikes = UserDislikesComment.all 
-        UserDislikesComment.find(params[:id]).destroy
         render json: @dislikes
     end
 
     private
 
-    def Dislikes_params
-        params.require(:dislike).permit(:user_id, :comment_id)
+    def dislikes_params
+        params.require(:vote).permit(:user_id, :comment_id)
     end
 end

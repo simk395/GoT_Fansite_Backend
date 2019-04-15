@@ -6,20 +6,15 @@ class UserLikesCommentsController < ApplicationController
     end
 
     def create
-        @likes = UserLikesComment.all 
         UserLikesComment.find_or_create_by(likes_params)
-        render json: @likes
-    end
-
-    def destroy
+        UserDislikesComment.find_or_initialize_by(likes_params).destroy
         @likes = UserLikesComment.all 
-        UserLikesComment.find(params[:id]).destroy
         render json: @likes
     end
 
     private
 
     def likes_params
-        params.require(:like).permit(:user_id, :comment_id)
+        params.require(:vote).permit(:user_id, :comment_id)
     end
 end
