@@ -6,10 +6,9 @@ class UserLikesCommentsController < ApplicationController
     end
 
     def create
-        UserLikesComment.find_or_create_by(likes_params)
+        @like = UserLikesComment.find_or_create_by(likes_params)
         UserDislikesComment.find_or_initialize_by(likes_params).destroy
-        @likes = UserLikesComment.all 
-        render json: @likes
+        render json: @like
     end
 
     private
